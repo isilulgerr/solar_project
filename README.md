@@ -22,4 +22,5 @@ Developed using Arduino C.
 Simulated and tested using the WOKWI Online Emulator.
 Purpose
 This intelligent system aims to enhance solar panel efficiency, simplify user interaction, and provide real-time monitoring and control capabilities, making it ideal for homes and industrial setups.
+![image](https://github.com/user-attachments/assets/b13ce6ef-3932-4932-a83f-2c99aafc9f42)
 
