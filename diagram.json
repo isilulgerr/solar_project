@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "author": "ışıl ülger",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 0.6, "left": -32.4, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -105.3,
+      "left": 551.4,
+      "attrs": { "temperature": "25.8", "humidity": "55" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -348.8,
+      "left": 466.4,
+      "attrs": { "pins": "i2c", "background": "black", "color": "white" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -2,
+      "left": 768,
+      "attrs": { "hornColor": "#785" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -227.2,
+      "left": -335.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr2",
+      "top": -140.8,
+      "left": -335.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr3",
+      "top": -54.4,
+      "left": -335.2,
+      "attrs": {}
+    },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -427.6, "left": -6.5, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 117.6,
+      "left": 741,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -664.4, "left": 44, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:GND", "mega:GND.2", "black", [ "v192", "h-489.6" ] ],
+    [ "lcd1:GND", "mega:GND.1", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "mega:5V", "red", [ "h-614.4", "v537.7", "h172.8" ] ],
+    [ "lcd1:SDA", "mega:20", "cyan", [ "h0" ] ],
+    [ "lcd1:SCL", "mega:21", "cyan", [ "h0" ] ],
+    [ "dht1:VCC", "mega:5V", "red", [ "v201.6", "h-470.4" ] ],
+    [ "servo1:GND", "mega:GND.2", "black", [ "h-67.2", "v172.8", "h-499.2" ] ],
+    [ "servo1:V+", "mega:5V", "red", [ "h-57.6", "v182.5", "h-518.4" ] ],
+    [ "servo1:PWM", "mega:11", "blue", [ "h-38.4", "v-211", "h-9.6" ] ],
+    [ "ldr1:VCC", "mega:5V", "red", [ "h96", "v499.2", "h201.6" ] ],
+    [ "ldr2:VCC", "mega:5V", "red", [ "h96", "v412.8", "h201.6" ] ],
+    [ "ldr3:VCC", "mega:5V", "red", [ "h86.4", "v326.4", "h192" ] ],
+    [ "ldr1:GND", "mega:GND.1", "black", [ "h0" ] ],
+    [ "ldr2:GND", "mega:GND.1", "black", [ "h0" ] ],
+    [ "ldr3:GND", "mega:GND.1", "black", [ "h0" ] ],
+    [ "ldr1:AO", "mega:A0", "orange", [ "h76.8", "v383.3", "h259.2" ] ],
+    [ "ldr2:AO", "mega:A1", "orange", [ "h67.2", "v306.5", "h278.4" ] ],
+    [ "ldr3:AO", "mega:A2", "orange", [ "h48", "v229.7", "h297.6" ] ],
+    [ "dht1:SDA", "mega:19", "magenta", [ "v105.6", "h-201.5", "v-172.8", "h-124.8" ] ],
+    [ "sw1:1", "mega:GND.1", "black", [ "v364.8", "h96" ] ],
+    [ "sw1:2", "mega:10", "gold", [ "v374.4", "h115.3" ] ],
+    [ "keypad1:R1", "mega:2", "orange", [ "v297.6", "h67.2" ] ],
+    [ "keypad1:R2", "mega:3", "gold", [ "v307.2", "h38" ] ],
+    [ "keypad1:R3", "mega:4", "green", [ "v288", "h18.9" ] ],
+    [ "keypad1:R4", "mega:5", "blue", [ "v278.4", "h-0.2" ] ],
+    [ "keypad1:C1", "mega:6", "violet", [ "v316.8", "h-9.7" ] ],
+    [ "keypad1:C2", "mega:7", "gray", [ "v124.8", "h-57.6" ] ],
+    [ "keypad1:C3", "mega:8", "white", [ "v172.8", "h-76.95" ] ],
+    [ "keypad1:C4", "mega:9", "purple", [ "v153.6", "h-86.7" ] ],
+    [ "bz1:1", "mega:GND.2", "green", [ "v57.6", "h-624" ] ],
+    [ "bz1:2", "mega:52", "orange", [ "v0", "h-163.6", "v-48" ] ]
+  ],
+  "serialMonitor": { "display": "always", "newline": "lf", "convertEol": false },
+  "dependencies": {}
+}
